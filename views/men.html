@@ -1,0 +1,43 @@
+<div id="tv">
+    <div ng-repeat="tv in data|filter:search|orderBy:sort:rev">
+      <div class="row">
+        <div class="col col-lg-4" ng-repeat="row in [0,1,2]">    
+        <div id="tv-item">
+      <div class="tv-image">      
+     <img ng-src="{{tv[row].url}}" alt="" srcset="">
+     </div>   
+     </div> 
+    
+    <div class="tv-name">{{tv[row].name}}</div>
+    <div>
+     <span class="after-discount"><h1 id="sellprice"> &#8377; {{tv[row].price-(tv[row].discount*tv[row].price/100)}} </h1></span>
+     <span ><h2 id="markprice">&nbsp;  &#8377;{{tv[row].price}}</h2></span>
+      <span class="discount" > <h4>&nbsp; {{tv[row].discount}} % Off </h4></span>                                            
+    </div>
+     <div class="discount">Extra {{tv[row].discount*tv[row].price/100}} &nbsp; discount</div>
+    <div class="row">
+            <div class="col col-lg-2">
+               <span>Highlights:</span>
+               </div>
+               <div class="col col-lg-4">
+               <div ng-repeat="highlight in tv[row].highlights">
+                   {{highlight}}
+               </div> 
+            </div>
+            <div class="col col-lg-2">
+                <span>Payment Options:</span></div>
+                <div class="col col-lg-4">
+                <div ng-repeat="option in tv[row].paymentOptions">
+                    {{option}}
+                </div>
+            </div>
+        </div>
+        <div class="tv-desc"><div> <h3>Descrition</h3> </div>{{tv[row].desc}}</div>
+       <div class="row">
+           <div class="col-lg-6"><a class="add-cart" href=""><div ng-click="addToCart(tv[row])" class="addtocart">ADD TO CART</div></a> </div>
+           <div class="col-lg-6"><a class="buy-now" href=""><div class="buynow">BUY NOW</div></a></div>
+       </div>
+</div>
+</div>
+</div>
+</div>

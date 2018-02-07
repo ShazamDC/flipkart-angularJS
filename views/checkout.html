@@ -1,0 +1,44 @@
+<div>
+    <div id="checkout">
+        <div ng-repeat="mobile in data">
+            <div class="mobile-items ">
+              <div class="row">
+                  <div class="col col-lg-6">         
+                <img class="mobile-images" ng-src="{{mobile.url}}">
+                </div>
+                <div class="col-lg-6">
+                    <div class="mobile-name">{{mobile.name}}</div>
+                    <div>
+                     <span class="after-discount"><h1 id="sellprice"> &#8377; {{mobile.price-(mobile.discount*mobile.price/100)}} </h1></span>
+                     <span ><h2 id="markprice">&nbsp;  &#8377;{{mobile.price}}</h2></span>
+                      <span class="discount" > <h4>&nbsp; {{mobile.discount}} % Off </h4></span>                                            
+                    </div>
+                     <div class="discount">Extra {{mobile.discount*mobile.price/100}} &nbsp; discount</div>
+                    <div class="row">
+                            <div class="col col-lg-2">
+                               <span>Highlights:</span>
+                               </div>
+                               <div class="col col-lg-4">
+                               <div ng-repeat="highlight in mobile.highlights">
+                                   {{highlight}}
+                               </div> 
+                            </div>
+                            <div class="col col-lg-2">
+                                <span>Payment Options:</span></div>
+                                <div class="col col-lg-4">
+                                <div ng-repeat="option in mobile.paymentOptions">
+                                    {{option}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile-desc"><div> <h3>Descrition</h3> </div>{{mobile.desc}}</div>
+
+                    </div>
+                  
+
+                </div>
+
+                </div>
+                </div>
+        </div>
+    </div>
