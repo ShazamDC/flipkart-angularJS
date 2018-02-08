@@ -2,7 +2,7 @@ app.factory("tvfactory",function($http,$q){
     var object = {item:[],
         callServer(){
             var defer = $q.defer();
-            $http.get("https://github.com/ShazamDC/flipkart-angularJS/blob/master/tv.json").then(function(data){
+            $http.get("./tv.json").then(function(data){
                 defer.resolve(data);
             },function(error){
                 defer.reject(error);
