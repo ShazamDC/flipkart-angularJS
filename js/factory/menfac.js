@@ -2,7 +2,7 @@ app.factory("menfactory",function($http,$q){
     var object = {
         item:[],callServer(){
             var defer = $q.defer();
-            $http.get("http://localhost:3000/men.json").then(function(data){
+            $http.get("https://github.com/ShazamDC/flipkart-angularJS/blob/master/men.json").then(function(data){
                 defer.resolve(data);
             },function(error){
                 defer.reject(error);
